@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Timed Typing Test App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@700;800&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="masthead">
+        <h1>Type<span class="accent">.</span>Speed<span class="accent">.</span>Go</h1>
+        <p class="tagline">How fast are your fingers?</p>
+    </header>
+
+    <main class="main">
+        <section class="test-area">
+
+            <!-- Origin text -->
+            <div id="origin-text">
+                <p>The text to test.</p>
+            </div>
+
+            <!-- Progress bar -->
+            <div id="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+
+            <!-- Textarea wrapper -->
+            <div class="test-wrapper">
+                <textarea id="test-area" name="textarea" rows="4" placeholder="Start typing to begin the test…"
+                    aria-label="Typing test input area" aria-live="polite"></textarea>
+            </div>
+
+            <!-- Stats + timer row -->
+            <div class="meta">
+                <div class="stat-group">
+                    <div class="stat-box">
+                        <span class="stat-label">TIME</span>
+                        <div class="timer" aria-live="off">00:00:00</div>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">WPM</span>
+                        <div class="stat-value"><span id="wpm">0</span></div>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">ERRORS</span>
+                        <div class="stat-value"><span id="error-count">0</span></div>
+                    </div>
+                </div>
+                <button id="reset" aria-label="Start over with a new passage">↺ Start Over</button>
+            </div>
+
+        </section>
+
+        <!-- High scores sidebar -->
+        <aside class="scores-panel">
+            <h2>Top 3 <span class="accent">Scores</span></h2>
+            <ul id="score-list">
+                <li class="no-scores">No scores yet!</li>
+            </ul>
+            <button id="clear-scores">Clear Scores</button>
+        </aside>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
